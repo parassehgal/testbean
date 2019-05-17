@@ -9,7 +9,7 @@ app.use(
 app.use(bodyParser.json());
 
 app.post('/testdialogflow',function (req, res) {
-	common.log('Inside /testdialogflow');
+	console.log('Inside /testdialogflow');
 	//var current_mode = "customise";
 	var ans;
 	var v=req.body.queryResult;
