@@ -19,7 +19,7 @@ app.post('/testdialogflow',function (req, res) {
 	
 	 request.post(
 	   {
-			url : 'https://115.254.126.74:1144/dialogflow',
+			url : 'https://www.securesmarthome.co:1144/dialogflow',
 			headers : {
 				authorization : req.headers['authorization']
 			},	
