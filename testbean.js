@@ -16,7 +16,7 @@ app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
 	
-	request.post('https://www.securesmarthome.co:1144/testdialogflow',
+	request.post('https://www.securesmarthome.co:1144/dialogflow',
 	{
 		json: req.body
 	},
@@ -32,7 +32,7 @@ app.post('/testdialogflow',function (req, res) {
 		else
 		{
 			res.json({
-					fulfillmentText: 'error while calling api: '+err+ ' , code: ' +  response.statusCode ,
+					fulfillmentText: 'error while calling api: ' +err+ ' , code: ' +  response.statusCode ,
 					source: "testbean"
 				  });
 		}
