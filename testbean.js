@@ -37,7 +37,7 @@ app.post('/testdialogflow',function (req, res) {
 				  });
 		}
 	});
-}).listen(process.env.PORT||9879);s
+}).listen(process.env.PORT||9879);
 	
 	//var current_mode = "customise";
 	/*var ans;
