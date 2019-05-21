@@ -15,8 +15,26 @@ res.send('Inside getheroku');
 app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
+	  request.get('https://www.securesmarthome.co:1144/dialogflow',
+	   function(err,response,body){
+			if(!err && response.statusCode == 200)
+			{
+				//res.send(body);
+				res.json({
+						fulfillmentText: 'Sucess',
+						source: "testbean"
+					  });
+			}
+			else
+			{
+				res.json({
+						fulfillmentText: 'error while calling api: ' +err+ ' , code: ' +  response.statusCode ,
+						source: "testbean"
+					  });
+			}
+	   });
 	
-	request.post('https://www.securesmarthome.co:1144/dialogflow',
+	/*request.post('https://www.securesmarthome.co:1144/dialogflow',
 	{
 		json: req.body
 	},
@@ -36,7 +54,7 @@ app.post('/testdialogflow',function (req, res) {
 					source: "testbean"
 				  });
 		}
-	});
+	});*/
 }).listen(process.env.PORT||9879);
 	
 	//var current_mode = "customise";
