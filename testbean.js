@@ -8,6 +8,10 @@ app.use(
 	);
 app.use(bodyParser.json());
 
+app.get('/testdialogflow',function(req,res){
+res.send('Inside getheroku');
+});
+
 app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	//var current_mode = "customise";
