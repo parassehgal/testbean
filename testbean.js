@@ -32,7 +32,7 @@ app.post('/testdialogflow',function (req, res) {
 		else
 		{
 			res.json({
-					fulfillmentText: 'error',
+					fulfillmentText: 'error while calling api: '+err+ ' , code: ' +  response.statusCode ,
 					source: "testbean"
 				  });
 		}
