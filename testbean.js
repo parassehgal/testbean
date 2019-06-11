@@ -26,7 +26,8 @@ res.send('Inside getheroku');
 app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
-	 log(req.headers['authorization'],true);
+	 //log(req.headers['authorization'],true);
+	 log(JSON.stringify(req.headers),true);
 	
 	 request.post(
 	    {
