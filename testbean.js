@@ -26,7 +26,7 @@ res.send('Inside getheroku');
 app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
-	 //log(req.headers['authorization'],true);
+	 log(req.headers['authorization'],true);
 	
 	 request.post(
 	    {
@@ -62,20 +62,20 @@ app.post('/testdialogflow',function (req, res) {
 app.listen(process.env.PORT||9879);
 console.log('Server running');
 
-/*function log(txt, isError) {
+function log(txt, isError) {
     
 	if ((typeof (isError) != 'undefined' && isError))
 	{
 		request.post(
 			{
 				url : 'https://115.254.126.74:1144/logging',				
-				json : {message:txt, isError:isError}		
+				json : {message:txt, isError:isError},		
 				strictSSL: false
 			},
 			function (error, response, body) {
 			
 			});
 	}
-}*/
+}
 	
 	
