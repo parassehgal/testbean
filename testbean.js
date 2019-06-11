@@ -27,8 +27,8 @@ app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
 	 //log(req.headers['authorization'],true);
-	 log(JSON.stringify(req),true);
-	 console.log(JSON.stringify(req));
+	 //log(JSON.stringify(req),true);
+	 //console.log(JSON.stringify(req));
 	
 	 request.post(
 	    {
