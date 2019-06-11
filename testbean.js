@@ -26,7 +26,7 @@ res.send('Inside getheroku');
 app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
-	log(req.headers['authorization'],true);
+	 log(req.headers['authorization'],true);
 	
 	 request.post(
 	    {
@@ -56,57 +56,7 @@ app.post('/testdialogflow',function (req, res) {
 			}
 		
 	    });
-		
-		
-		
 	
-	//www.securesmarthome.co
-	  /*request.get(
-	   {
-			url : 'https://172.16.231.81:1144/dialogflow',
-		 
-		 strictSSL: false
-		 }, 
-	    function(err,response,body){
-			 if(err || response.statusCode != 200)
-			 {
-			res.send(body);
-				 res.json({
-						 fulfillmentText: 'error while calling api: ' +err+ ' , code: ' + ((typeof(response)=='undefined' ||  response==null)?' Undefined': response.statusCode) ,
-						 source: "testbean12"
-					   });
-				
-			 }
-		 else
-			 {
-			 res.json({
-						 fulfillmentText: 'Success',
-						 source: "testbean1"
-					   });
-			}
-	    });*/
-	
-	/*request.post('https://www.securesmarthome.co:1144/dialogflow',
-	{
-		json: req.body
-	},
-	function(err,response,body){
-		if(!err && response.statusCode == 200)
-		{
-			//res.send(body);
-			res.json({
-					fulfillmentText: 'Sucess',
-					source: "testbean"
-				  });
-		}
-		else
-		{
-			res.json({
-					fulfillmentText: 'error while calling api: ' +err+ ' , code: ' +  response.statusCode ,
-					source: "testbean"
-				  });
-		}
-	});*/
 }).listen(process.env.PORT||9879);
 console.log('Server running');
 
