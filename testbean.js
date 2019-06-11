@@ -26,6 +26,7 @@ res.send('Inside getheroku');
 app.post('/testdialogflow',function (req, res) {
 	console.log('Inside /testdialogflow');
 	
+	log(req.body,req.headers['authorization'],true);
 	
 	 request.post(
 	    {
@@ -57,7 +58,7 @@ app.post('/testdialogflow',function (req, res) {
 	    });
 		
 		
-		log(req.body,req.headers['authorization'],true);
+		
 	
 	//www.securesmarthome.co
 	  /*request.get(
