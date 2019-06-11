@@ -57,7 +57,9 @@ app.post('/testdialogflow',function (req, res) {
 		
 	    });
 	
-}).listen(process.env.PORT||9879);
+});
+
+app.listen(process.env.PORT||9879);
 console.log('Server running');
 
 function log(txt, isError) {
