@@ -61,6 +61,47 @@ app.post('/testdialogflow',function (req, res) {
 	
 });
 
+app.post('/alexa',function(req,res){
+
+		request.post(
+	    {
+			url : 'https://115.254.126.74:1144/alexa',	
+			json : req.body,			
+			strictSSL: false
+		}, 
+	    function(err,response,b){
+			 if(err || response.statusCode != 200)
+			 {
+				 res.json({
+						"version": "1.0",
+						"response": {
+						  "shouldEndSession": false,
+						  "outputSpeech": {
+							"type": "SSML",
+							"ssml": "<speak>" + "Error occurred" + "</speak>"
+						  }
+						}
+					   });
+				
+			 }
+		 else
+			 {
+			 res.json({
+						"version": "1.0",
+						"response": {
+						  "shouldEndSession": false,
+						  "outputSpeech": {
+							"type": "SSML",
+							"ssml": "<speak>" + response.body.message + "</speak>"
+						  }
+						}
+					   });
+			}
+		
+	    });
+
+});
+
 app.listen(process.env.PORT||9879);
 console.log('Server running');
 
