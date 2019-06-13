@@ -111,7 +111,7 @@ app.post('/alexa/token',function(req,res){
 			strictSSL: false
 		}, 
 	    function(err,response,b){
-		}
+		});
 });
 
 app.listen(process.env.PORT||9879);
