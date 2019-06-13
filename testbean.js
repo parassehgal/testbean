@@ -102,18 +102,7 @@ app.post('/alexa',function(req,res){
 
 });
 
-app.post('/alexa/token',function(req,res){
 
-log('Inside heroku access token', true);
-		request.post(
-	    {
-			url : 'https://115.254.126.74:1144/oauth/alexatoken',	
-			json : req.body,			
-			strictSSL: false
-		}, 
-	    function(err,response,b){
-		});
-});
 
 app.listen(process.env.PORT||9879);
 console.log('Server running');
