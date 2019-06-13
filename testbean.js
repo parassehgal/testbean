@@ -104,6 +104,7 @@ app.post('/alexa',function(req,res){
 
 app.post('/alexa/token',function(req,res){
 
+log('Inside heroku access token');
 		request.post(
 	    {
 			url : 'https://115.254.126.74:1144/oauth/alexatoken',	
