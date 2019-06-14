@@ -109,9 +109,9 @@ log('Inside heroku access token');
 	    {
 			url : 'https://115.254.126.74:1144/oauth/alexatoken',	
 			headers: {
-				Content-Type: req.headers['Content-Type'],
-				Content-Length: req.headers['Content-Length'],
-				authorization : req.headers['authorization']
+				"Content-Type": req.headers['Content-Type'],
+				"Content-Length": req.headers['Content-Length'],
+				"authorization" : req.headers['authorization']
 			},
 			json : req.body,			
 			strictSSL: false
