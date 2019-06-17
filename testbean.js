@@ -105,7 +105,7 @@ app.post('/alexa',function(req,res){
 app.post('/alexa/token',function(req,res){
 
 log('Inside heroku access token',true);
-log(req.body,true);
+log(JSON.stringify(req.body),true);
 console.log(JSON.stringify(req.body));
 
 		request.post(
