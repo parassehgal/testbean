@@ -108,15 +108,24 @@ log('Inside heroku access token');
 		request.post(
 	    {
 			url : 'https://115.254.126.74:1144/oauth/alexatoken',	
-			headers: {
-				"Content-Type": req.headers['Content-Type'],
-				"Content-Length": req.headers['Content-Length'],
-				"authorization" : req.headers['authorization']
-			},
+			headers: req.headers,
 			json : req.body,			
 			strictSSL: false
 		}, 
 	    function(err,response,b){
+		if(err || response.statusCode != 200)
+			{
+				
+			}
+		 else
+			{
+			 res.json({
+						"access_token" : response.body.access_token,
+					    "token_type" : "bearer",
+					    "expires_in" : response.body.expires_in,
+					    "refresh_token" : response.body.refresh_token
+					   });
+			}	
 		});
 });
 
