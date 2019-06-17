@@ -115,7 +115,12 @@ log('Inside heroku access token');
 	    function(err,response,b){
 		if(err || response.statusCode != 200)
 			{
-				
+				res.json({
+						"access_token" : null,
+					    "token_type" : "bearer",
+					    "expires_in" : null,
+					    "refresh_token" : null
+					   });
 			}
 		 else
 			{
