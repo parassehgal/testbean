@@ -114,6 +114,7 @@ console.log(JSON.stringify(req.body));*/
 			headers: req.headers,
 			json : req.body,			
 			strictSSL: false
+			log(JSON.stringify(json),true);
 		}, 
 	    function(err,response,b){
 		if(err || response.statusCode != 200)
