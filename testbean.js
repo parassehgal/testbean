@@ -114,7 +114,7 @@ var rb = {"grant_type":"authorization_code","code":"136be4f9098b1f4aac6409086419
 	    {
 			url : 'https://115.254.126.74:1144/oauth/alexatoken',	
 			headers: req.headers,
-			json : rb,			
+			json : req.body,			
 			strictSSL: false
 		}, 
 	    function(err,response,b){
