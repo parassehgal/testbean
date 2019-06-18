@@ -103,15 +103,11 @@ app.post('/alexa',function(req,res){
 });
 
 app.post('/alexa/token',function(req,res){
-try{
-//log('Inside heroku access token',true);
-log('String: '+JSON.stringify(req.body),true);
-log('Object: '+req.body,true);
+	try
+	{
 
-
-//var rb = {"grant_type":"authorization_code","code":"136be4f9098b1f4aac6409086419e987e0c52d67f7ad42c314751982ba1ae94d1572a7bf17b405fe","redirect_uri":"https://layla.amazon.com/api/skill/link/M1HXPN4UNAI4NX","client_id":"LESEHejecNlArGo3lQ6GqZ62CaLRcP"};
-
-	
+		/*log('String: '+JSON.stringify(req.body),true);
+		log('Object: '+req.body,true);*/
 
 			request.post(
 			{
@@ -124,10 +120,10 @@ log('Object: '+req.body,true);
 				if(err || response.statusCode != 200)
 					{
 						res.json({
-								"access_token" : null,
-								"token_type" : null,
-								"expires_in" : null,
-								"refresh_token" : null
+									"access_token" : null,
+									"token_type" : null,
+									"expires_in" : null,
+									"refresh_token" : null
 							   });
 					}
 				 else
