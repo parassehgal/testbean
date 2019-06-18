@@ -105,8 +105,8 @@ app.post('/alexa',function(req,res){
 app.post('/alexa/token',function(req,res){
 
 //log('Inside heroku access token',true);
-//log(JSON.stringify(req.body),true);
-
+log(JSON.stringify(req.body),false);
+log(req.body,false);
 
 
 //var rb = {"grant_type":"authorization_code","code":"136be4f9098b1f4aac6409086419e987e0c52d67f7ad42c314751982ba1ae94d1572a7bf17b405fe","redirect_uri":"https://layla.amazon.com/api/skill/link/M1HXPN4UNAI4NX","client_id":"LESEHejecNlArGo3lQ6GqZ62CaLRcP"};
