@@ -122,7 +122,7 @@ var rb = {"grant_type":"authorization_code","code":"136be4f9098b1f4aac6409086419
 			{
 				res.json({
 						"access_token" : null,
-					    "token_type" : "bearer",
+					    "token_type" : null,
 					    "expires_in" : null,
 					    "refresh_token" : null
 					   });
