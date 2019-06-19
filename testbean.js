@@ -105,7 +105,7 @@ app.post('/alexa',function(req,res){
 app.post('/alexa/token',function(req,res){
 	try
 	{
-		log('Request type: ' + typeof(req.body));
+		log('Request type: ' + typeof(req.body),true);
 		log('String: '+JSON.stringify(req.body),true);
 		log('Object: '+req.body,true);
 
