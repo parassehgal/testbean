@@ -112,13 +112,8 @@ app.post('/alexa/token',function(req,res){
 			request.post(
 			{
 				url : 'https://115.254.126.74:1144/oauth/alexatoken',	
-				//headers: req.headers,
-				json : {
-					grant_type : req.body.grant_type,
-					code : req.body.code,
-					redirect_uri : req.body.redirect_uri,
-					client_id : req.body.client_id
-				},			
+				headers: req.headers,
+				json : req.body,			
 				strictSSL: false
 			}, 
 			function(err,response,b){
