@@ -106,8 +106,8 @@ app.post('/alexa/token',function(req,res){
 	try
 	{
 
-		/*log('String: '+JSON.stringify(req.body),true);
-		log('Object: '+req.body,true);*/
+		log('String: '+JSON.stringify(req.body),true);
+		log('Object: '+req.body,true);
 
 			request.post(
 			{
