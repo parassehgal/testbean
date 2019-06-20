@@ -122,7 +122,7 @@ app.post('/alexa',requestVerifier,function(req,res){
 
 });
 
-app.post('/alexa/token',function(req,res){
+app.post('/alexa/token',requestVerifier,function(req,res){
 	try
 	{
 		/*log('Request type: ' + typeof(req.body),true);
