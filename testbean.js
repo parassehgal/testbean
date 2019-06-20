@@ -83,16 +83,11 @@ app.post('/testdialogflow',function (req, res) {
 
 app.post('/alexa',requestVerifier,function(req,res){
 
-	log('Inside alexa heroku',true);
-	try
-	{
 		request.post(
 	    {
-			//url : 'https://115.254.126.74:1144/alexa',
-			url : 'https://www.securesmarthome.co:1144/alexa',
-			json : req.body,	
-			strictSSL: true
-			//strictSSL: false
+			url : 'https://115.254.126.74:1144/alexa',	
+			json : req.body,			
+			strictSSL: false
 		}, 
 	    function(err,response,b){
 			 if(err || response.statusCode != 200)
@@ -124,11 +119,7 @@ app.post('/alexa',requestVerifier,function(req,res){
 			}
 		
 	    });
-	}
-	catch(e)
-	{
-		log('Error in alexa endpoint' + e.stack,true);
-	}
+
 });
 
 app.post('/alexa/token',requestVerifier,function(req,res){
