@@ -83,6 +83,7 @@ app.post('/testdialogflow',function (req, res) {
 
 app.post('/alexa',requestVerifier,function(req,res){
 
+	log('Inside alexa heroku',true);
 	try
 	{
 		request.post(
