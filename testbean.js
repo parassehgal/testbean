@@ -85,9 +85,11 @@ app.post('/alexa',requestVerifier,function(req,res){
 
 		request.post(
 	    {
-			url : 'https://115.254.126.74:1144/alexa',	
-			json : req.body,			
-			strictSSL: false
+			//url : 'https://115.254.126.74:1144/alexa',
+			url : 'https://www.securesmarthome.co:1144/authorisealexa',
+			json : req.body,	
+			strictSSL: true
+			//strictSSL: false
 		}, 
 	    function(err,response,b){
 			 if(err || response.statusCode != 200)
