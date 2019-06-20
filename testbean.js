@@ -3,11 +3,31 @@ const bodyParser = require("body-parser");
 var request = require('request');
 var app = express();
 var fs =require('fs');
+let alexaVerifier = require('alexa-verifier');
+
 app.use(
 		bodyParser.urlencoded(
 		{ extended: true })
 	);
 app.use(bodyParser.json());
+
+function requestVerifier(req, res, next) {
+  alexaVerifier(
+    req.headers.signaturecertchainurl,
+    req.headers.signature,
+    req.rawBody,
+    function verificationCallback(err) {
+      if (err) {
+        res.status(401).json({
+          message: 'Verification Failure',
+          error: err
+        });
+      } else {
+        next();
+      }
+    }
+  );
+}
 
 app.get('/login',function(req,res){
 	try{
@@ -61,7 +81,7 @@ app.post('/testdialogflow',function (req, res) {
 	
 });
 
-app.post('/alexa',function(req,res){
+app.post('/alexa',requestVerifier,function(req,res){
 
 		request.post(
 	    {
@@ -102,7 +122,7 @@ app.post('/alexa',function(req,res){
 
 });
 
-app.post('/alexa/token',function(req,res){
+app.post('/alexa/token',requestVerifier,function(req,res){
 	try
 	{
 		/*log('Request type: ' + typeof(req.body),true);
