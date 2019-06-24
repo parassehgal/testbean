@@ -81,7 +81,7 @@ app.post('/testdialogflow',function (req, res) {
 	
 });
 
-app.post('/alexa',requestVerifier,function(req,res){
+app.post('/alexa',function(req,res){
 
 		request.post(
 	    {
