@@ -11,7 +11,6 @@ app.use(
 app.use(bodyParser.json());
 
 function requestVerifier(req, res, next) {
-log('Inside request verifier');
 
   alexaVerifier(
     req.headers.signaturecertchainurl,
