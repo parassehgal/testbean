@@ -29,6 +29,7 @@ function requestVerifier(req, res, next) {
   );
 }
 
+
 app.get('/login',function(req,res){
 	try{
 		fs.readFileSync('./html/login.html');
@@ -81,8 +82,15 @@ app.post('/testdialogflow',function (req, res) {
 	
 });
 
-app.post('/alexa',function(req,res){
+app.post('/alexa',requestVerifier,function(req,res){
 
+	var reqTimestamp = new Date(req.body.request.timestamp).getTime();
+	var curTimestamp = new Date().getTime();
+	var delayinSeconds = (curTimestamp-reqTimestamp)/1000;
+	
+	
+	if(delayinSeconds<150)
+	{
 		request.post(
 	    {
 			url : 'https://115.254.126.74:1144/alexa',	
@@ -119,6 +127,12 @@ app.post('/alexa',function(req,res){
 			}
 		
 	    });
+	}
+	else{
+		return res.status(500).json({
+		  status: "error"
+		});
+	}
 
 });
 
